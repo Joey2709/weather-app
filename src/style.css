@@ -1,0 +1,344 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Work+Sans&display=swap");
+
+body {
+  background-color: #121212;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+}
+
+#top-container,
+#forecast-container {
+  height: 50vh;
+}
+
+#time {
+  font-size: 5.8rem;
+  font-family: "Inconsolata", monospace;
+  user-select: none;
+}
+
+#date {
+  font-size: 2rem;
+  font-family: "Inconsolata", monospace;
+  user-select: none;
+}
+
+#error-data {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  font-weight: 900;
+}
+
+#data-forecast {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.center div,
+.right div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#forecast {
+  font-family: "Work Sans", sans-serif;
+  font-size: 2em;
+}
+.center,
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  width: 48%;
+  height: 100%;
+  font-size: 25px;
+  gap: 5px;
+  border-radius: 5px;
+}
+
+.forecast-item {
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+  font-weight: 700;
+  height: 280px;
+  width: 280px;
+  border: 2px solid black;
+  background: rgba(192, 192, 192, 0.561);
+  border-radius: 15px;
+  gap: 10px;
+}
+
+img {
+  user-select: none;
+}
+
+#weather {
+  display: none;
+}
+/* ===== Button CSS ===== */
+#search {
+  padding: 5px;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#search:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+#search:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+#search :active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* CSS */
+#unit,
+#daily,
+#hourly {
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(192, 192, 192, 0.7);
+  border: 2px solid #000;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: #000;
+  cursor: pointer;
+  display: none;
+  fill: #000;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -0.8px;
+  line-height: 24px;
+  min-width: 80px;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#unit:focus,
+#daily:focus,
+#hourly:focus {
+  color: #171e29;
+}
+
+#unit:hover,
+#daily:hover,
+#hourly:hover {
+  border-color: white;
+  color: white;
+  fill: white;
+}
+
+#unit:active,
+#daily:active,
+#hourly:active {
+  border-color: white;
+  color: white;
+  fill: white;
+  transform: translateY(5px);
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: none;
+  scrollbar-color: #808080 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #app {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    gap: 50px;
+  }
+
+  #top-container {
+    width: 100vw;
+    height: 100vh;
+    gap: 0;
+  }
+
+  #buttons-date {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  #time {
+    font-size: 5rem;
+  }
+
+  #date {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  #weather {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    gap: 0;
+    padding: 5px;
+  }
+
+  .center,
+  .right {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    font-size: 1em;
+    width: 48vw;
+    height: 100%;
+    gap: 15px;
+  }
+
+  img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .center div,
+  .right div {
+    gap: 2px;
+    font-weight: 900;
+  }
+
+  #forecast-container {
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: -58px;
+    padding: 10px;
+    height: auto;
+  }
+
+  #forecast {
+    text-align: center;
+    padding: 5px;
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+
+  .forecast-item {
+    font-size: 0.95em;
+    width: 180px;
+    height: 180px;
+    border: 2px solid black;
+  }
+
+  .forecast-item h2,
+  .forecast-item p {
+    font-weight: 900;
+  }
+}
