@@ -18,7 +18,7 @@
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: #e5e7eb; /* 2 */
+  border-color: currentColor; /* 2 */
 }
 
 ::before,
@@ -398,7 +398,7 @@ video {
   --tw-ring-inset:  ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-color: rgba(147, 197, 253, 0.5);
   --tw-ring-offset-shadow: 0 0 rgba(0,0,0,0);
   --tw-ring-shadow: 0 0 rgba(0,0,0,0);
   --tw-shadow: 0 0 rgba(0,0,0,0);
@@ -445,7 +445,7 @@ video {
   --tw-ring-inset:  ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-color: rgba(147, 197, 253, 0.5);
   --tw-ring-offset-shadow: 0 0 rgba(0,0,0,0);
   --tw-ring-shadow: 0 0 rgba(0,0,0,0);
   --tw-shadow: 0 0 rgba(0,0,0,0);
@@ -468,6 +468,51 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
+}
+.flex {
+  display: flex;
+}
+.w-\[240px\] {
+  width: 240px;
+}
+.w-\[50px\] {
+  width: 50px;
+}
+.min-w-\[350px\] {
+  min-width: 350px;
+}
+.min-w-\[700px\] {
+  min-width: 700px;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+.gap-\[15px\] {
+  gap: 15px;
+}
+.gap-\[5px\] {
+  gap: 5px;
+}
+.gap-\[25px\] {
+  gap: 25px;
+}
+.p-\[15px\] {
+  padding: 15px;
+}
+.p-\[4px\] {
+  padding: 4px;
 }
 
 body {
