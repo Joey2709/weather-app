@@ -550,6 +550,10 @@ body {
           user-select: none;
 }
 
+#input-text {
+  border-radius: 10px;
+}
+
 #error-data {
   display: none;
   width: 100%;
@@ -618,6 +622,11 @@ img {
 #weather {
   display: none;
 }
+
+svg {
+  width: 25px;
+  height: 25px;
+}
 /* ===== Button CSS ===== */
 #search {
   padding: 5px;
@@ -627,6 +636,8 @@ img {
   background: #111;
   cursor: pointer;
   position: relative;
+  width: auto;
+  height: auto;
   z-index: 0;
   border-radius: 10px;
   -moz-user-select: none;
