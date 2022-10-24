@@ -1,4 +1,5 @@
 import "./style.css";
+import "./img/default.jpeg";
 import {
   kelvinToCelcius,
   capitalize,
@@ -50,7 +51,7 @@ buttonUnit.addEventListener("click", () => {
 inputSerach.addEventListener("keyup", () => {
   if (inputSerach.value.length == 0) {
     validateButtons();
-    app.style.backgroundImage = "url(img/default.jpg)";
+    app.style.backgroundImage = "url(img/default.jpeg)";
     return;
   }
 });
@@ -75,7 +76,7 @@ function validateButtons() {
   weatherContainer.style.display = "none";
   forecast.innerHTML = "";
   dataForecast.innerHTML = "";
-  app.style.backgroundImage = "url(img/default.jpg)";
+  app.style.backgroundImage = "url(img/default.jpeg)";
   if (window.matchMedia("(max-width: 576px)").matches) {
     buttonsDate.style.height = "100vh";
   }

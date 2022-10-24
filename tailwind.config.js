@@ -1,5 +1,9 @@
 module.exports = {
-  content: ["./dist/*.html"],
+  purge: {
+    content: ["./src/*.html"],
+  },
+  presets: [],
+  darkMode: false,
   theme: {
     extend: {},
   },

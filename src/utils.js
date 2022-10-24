@@ -1,5 +1,14 @@
 import { createForecastHourly } from "./index";
+import fromUnixTime from "date-fns/fromUnixTime";
+import format from "date-fns/format";
 
+const imgWeather = require.context(
+  "./img/weather",
+  true,
+  /\.(png|svg|jpg|gif)$/
+);
+
+console.log(imgWeather);
 function kelvinToCelcius(number) {
   return Math.floor(Math.ceil(Number(number) - 273.15));
 }
@@ -45,10 +54,10 @@ function setBackGround(value) {
     value == "Squall" ||
     value == "Tornado"
   ) {
-    return "url(img/weather/Atmosphere.jpg)";
+    return `url(img/weather/Atmosphere.jpeg)`;
   }
 
-  return `url(img/weather/${value}.jpg`;
+  return `url(img/weather/${value}.jpeg`;
 }
 
 function celsiusToFahrenheit(value) {

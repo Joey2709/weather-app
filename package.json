@@ -1,12 +1,19 @@
 {
   "scripts": {
     "start": "webpack-dev-server --mode=development --config webpack.config.js",
-    "build": "webpack"
+    "build": "rimraf dist && webpack --config webpack.config.js"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "image-webpack-loader": "^8.1.0",
+    "mini-css-extract-plugin": "^2.6.1",
     "postcss": "^8.4.18",
     "postcss-loader": "^7.0.1",
     "postcss-preset-env": "^7.8.2",
